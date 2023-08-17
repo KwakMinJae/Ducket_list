@@ -4,10 +4,13 @@ import { setPersistence, browserSessionPersistence } from "firebase/auth";
 import { auth } from "../firebase/firebase-config";
 import egg from '../images/egg.png'
 import { Helmet } from "react-helmet-async";
+import show from "../images/show_password.png"
+import hide from "../images/hide_password.png"
 
 const Signup = () => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const register = async () => {
     try {
@@ -53,8 +56,10 @@ const Signup = () => {
               }}
               onKeyPress={handleKeyPress}
             />
+            <div style={{ position:'relative' }}>
             <input
               className="login_input"
+              type={showPassword ? "text" : "password"}
               placeholder="비밀번호를 입력해주세요"
               value={registerPassword}
               onChange={(e) => {
@@ -62,6 +67,17 @@ const Signup = () => {
               }}
               onKeyPress={handleKeyPress}
             />
+            <a href="#none"
+                onClick={() => setShowPassword(!showPassword)}
+                className="show_password_button"
+              >
+                <img
+                  src={showPassword ? hide : show}
+                  alt={showPassword ? "숨기기" : "보이기"}
+                  style={{ width: "24px", height: "24px" }}
+                />
+              </a>
+            </div>
             <button onClick={register} className="login_sign">
               유저 생성
             </button>
