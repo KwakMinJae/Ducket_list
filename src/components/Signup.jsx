@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { setPersistence, browserSessionPersistence } from "firebase/auth";
 import { auth } from "../firebase/firebase-config";
 import egg from '../images/egg.png'
+import { Helmet } from "react-helmet-async";
 
 const Signup = () => {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -35,8 +36,11 @@ const Signup = () => {
   return (
     <div>
       <div className="login_comp">
+          <Helmet>
+            <title>회원가입 해주세요</title>
+          </Helmet>
         <div className='login_title'>
-          <h2>회원가입이 할 수 있어요 !!</h2><img src={egg}/>
+          <h2>회원가입 해주세요 !!</h2><img src={egg} alt="회원가입 해주세요 !!"/>
         </div>
         <div className="login_form">
           <div className="login_wrap">

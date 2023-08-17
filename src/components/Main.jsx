@@ -7,6 +7,7 @@ import React from "react";
 
 import { getAuth } from 'firebase/auth'
 // import { getAuth } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 
 function Main() {
     const auth = getAuth();
@@ -21,6 +22,9 @@ function Main() {
 
     return (
       <div className="App">
+        <Helmet>
+            <title>Ducket list</title>
+          </Helmet>
         <main>
             <div className='main1_wrap'>
                 <div className='bucket_text_wrap1'>

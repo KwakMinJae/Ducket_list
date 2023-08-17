@@ -2,7 +2,8 @@ import google from '../images/google_icon.png'
 import React, { useState } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, setPersistence, signInWithEmailAndPassword, browserSessionPersistence, signOut } from "firebase/auth";
 import duck from '../images/duck_ducks_pato_icon.png'
-import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const auth = getAuth()
@@ -70,8 +71,11 @@ const Login = () => {
 
     return (
         <div className="login_comp">
+          <Helmet>
+            <title>로그인 해주세요</title>
+          </Helmet>
           <div className='login_title'>
-          <h2>로그인 해주세요 !!</h2><img src={duck}/>
+          <h2>로그인 해주세요 !!</h2><img src={duck} alt="로그인 해주세요 !!"/>
           </div>
           <form className="login_form" onSubmit={handleSubmit}>
               <div className='login_wrap'>

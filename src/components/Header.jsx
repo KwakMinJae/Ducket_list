@@ -1,10 +1,10 @@
 // Header.jsx
-import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 // import { Link, Router } from 'react-router-dom';
 import header_logo from '../images/header_logo.png'
+import header_app_logo from '../images/header_mobile_logo.png'
 import { getAuth,  signOut , onAuthStateChanged} from "firebase/auth";
-import Login from './Login';
 
 function Header() {
   const auth = getAuth();
@@ -40,7 +40,9 @@ function Header() {
         <header>
           <div className='header_wrap'>
             <NavLink to="/">
-            <div className='header_logo'><h1><img src={header_logo} alt="로고" /></h1>
+            <div className='header_logo web'><h1><img src={header_logo} alt="로고" /></h1>
+            </div>
+            <div className='header_logo mobile'><h1><img src={header_app_logo} alt="로고" /></h1>
             </div>
             </NavLink>
             {!cUser ? 

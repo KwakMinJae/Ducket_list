@@ -57,6 +57,9 @@ header{
 .header_login>button span{
   color:#fbfbfb;
 }
+.mobile{
+  margin-left:10px;
+}
 /* ------------------------------------ */
 
 /* 메인 페이지 */
@@ -453,9 +456,17 @@ select{
     font-size:16px;
   }
 }
+@media (min-width:768.1px){
+  .mobile{
+    display: none;
+  }
+}
 @media (max-width: 768px) {
+  .web{
+    display: none;
+  }
   .main1_wrap{
-    margin-top:100px;
+    margin-top:0px;
     flex-direction: column-reverse;
   }
   .bucket_text_wrap1{

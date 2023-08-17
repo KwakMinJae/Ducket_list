@@ -1,4 +1,3 @@
-
 import All from '../images/6306486.jpg'
 import Exer from '../images/8463904.jpg'
 import Trip from '../images/6955497.jpg'
@@ -10,13 +9,13 @@ import Complete from '../images/success_icon.png'
 import Modify from '../images/modify_icon.png'
 import delete_icon from '../images/delete_icon.png'
 import React, { useState, useEffect } from 'react';
-import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import { db, auth } from '../firebase/firebase-config';
-import { collection, getDocs, doc, addDoc, query, orderBy, updateDoc, deleteDoc, where, onSnapshot } from 'firebase/firestore'
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { collection, getDocs, doc, addDoc, query, orderBy, updateDoc, deleteDoc, onSnapshot } from 'firebase/firestore'
+import { onAuthStateChanged } from 'firebase/auth';
 import { getDoc } from 'firebase/firestore';
+import { Helmet } from "react-helmet-async";
 
 
 function Content() {
@@ -219,6 +218,9 @@ function Content() {
 
   return (
     <div className="App">
+      <Helmet>
+        <title>꿈을 작성해주세요</title>
+      </Helmet>
       <div className="cont_wrap">
         <div className='bucket_menu'>
           <div className='list_all_number_wrap'>
