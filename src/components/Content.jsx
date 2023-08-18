@@ -151,7 +151,7 @@ function Content() {
   }
   
   useEffect(() => {
-    // Firestore에서 데이터 변경 시 실시간으로 업데이트
+    
     const unsubscribe = onSnapshot(
       query(todosCollectionRef, orderBy("timeStamp", "desc")),
       (snapshot) => {
@@ -166,7 +166,7 @@ function Content() {
     );
 
     return () => {
-      unsubscribe(); // 구독 해제
+      unsubscribe(); 
     };
   }, []);
 

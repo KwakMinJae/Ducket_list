@@ -97,11 +97,11 @@ const Login = () => {
               <button type="button" onClick={googleLogin} className='google_login'>
                 <img src={google} alt="구글 로그인"/> 구글 로그인
                 </button><br/>
+              <NavLink to = "/signup">
               <button type="button" className='login_sign'>
-                <NavLink to = "/signup">
                   회원가입
-                </NavLink>
               </button>
+              </NavLink>
             </div>
           </form>
 
