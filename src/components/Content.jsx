@@ -105,6 +105,7 @@ function Content() {
   const now_date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
 
   const createList = () => {
+    if (newList.trim() !== "") {
     addDoc(todosCollectionRef, {
       content: newList,
       d_date: now_date,
@@ -114,7 +115,9 @@ function Content() {
       uid: user.uid,
     });
 
-    setChanged(true);
+      setChanged(true);
+      setNewList("");
+    }
   }
 
   const updateList = async (id, content) => {
@@ -170,6 +173,12 @@ function Content() {
     };
   }, []);
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // 기본 동작 방지
+      createList();
+    }
+  }
   
 
   const totalListCount = todos.length;
@@ -244,9 +253,10 @@ function Content() {
           <div className="list_textarea">
             <div className="list_text1"><span>당신의 꿈을 작성해주세요</span></div>
             <textarea
-              onChange={function (e) {
-                setNewList(e.target.value)
-              }}></textarea>
+              value={newList}
+              onChange={(e) => setNewList(e.target.value)}
+              onKeyDown={handleKeyDown} // 엔터 키 감지
+              ></textarea>
           </div>
           <div className="list_select_box">
             <select value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
