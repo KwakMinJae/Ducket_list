@@ -18,7 +18,7 @@
 
 ## .env.local파일 생성
 - root 디렉토리에 .env.local 파일을 생성해주세요
-  내용은 다음과 같습니다.
+- 내용은 다음과 같습니다.
   REACT_APP_FB_API_KEY= 파이어베이스 콘솔에서 전달받은 값 입력
   REACT_APP_FB_AUTH_DOMAIN= 파이어베이스 콘솔에서 전달받은 값 입력
   REACT_APP_FB_PROJECT_ID= 파이어베이스 콘솔에서 전달받은 값 입력
